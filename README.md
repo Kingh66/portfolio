@@ -1,7 +1,5 @@
 # 🚀 Sizwe Mthembu - Portfolio  
 
-![Portfolio Screenshot](https://ibb.co/NnCmsrSX)
-
 Welcome to my **professional portfolio!** 🎨✨  
 This project showcases my **skills, projects, and experience** as a **Full Stack Developer**. Designed with a **modern, cyberpunk-inspired aesthetic**, it includes **dark/light mode, smooth animations, and a fully responsive layout.**  
 
