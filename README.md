@@ -87,7 +87,7 @@ portfolio/
 
 ---
 
-## 🛠️ Customization  
+## 🛠️ Customization / Make it your own
 
 ### **🖼️ Update Content**  
 - Replace **me1.jpeg** with your profile picture.  
