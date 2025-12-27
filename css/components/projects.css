@@ -1,0 +1,330 @@
+/* components/projects.css */
+/* Projects Section Styles */
+.projects {
+    padding: 80px 50px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the entire section */
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--neon-green);
+    text-align: center;
+    width: 100%; /* Ensure full width for proper centering */
+}
+
+.projects .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; /* Ensure grid takes full available width */
+    justify-items: center; /* Center grid items */
+}
+
+.card {
+    background-color: rgba(29, 29, 29, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%; /* Ensure cards take full grid cell width */
+    max-width: 400px; /* Limit maximum card width */
+}
+
+[data-theme="light"] .card {
+    background-color: rgba(240, 240, 240, 0.7);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.1);
+    background-color: rgba(29, 29, 29, 0.9);
+}
+
+[data-theme="light"] .card:hover {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+.image-container {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.project-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .project-links {
+    opacity: 1;
+}
+
+.project-button {
+    padding: 8px 15px;
+    background: var(--neon-green);
+    color: #121212;
+    border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    transition: transform 0.3s ease;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.project-button.demo {
+    background: #007bff;
+    color: #fff;
+}
+
+.project-button:hover {
+    transform: translateY(-2px);
+}
+
+.content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.content h3 {
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.tech-stack span {
+    background: rgba(0, 255, 0, 0.1);
+    color: var(--neon-green);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 500;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.achievements {
+    padding-left: 20px;
+    margin: 1rem 0;
+}
+
+.achievements li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+.achievements i {
+    color: var(--neon-green);
+    min-width: 20px;
+}
+
+.controls {
+    text-align: center;
+    margin: 3rem auto 0;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center; /* Center the button */
+}
+
+.view-more-btn {
+    background: var(--neon-green);
+    color: var(--bg-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.view-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+}
+
+/* Hidden projects */
+.projects .grid .card.hidden {
+    display: none;
+}
+
+/* Responsive Styles - IMPROVED FOR CENTERING */
+@media (max-width: 768px) {
+    .projects {
+        padding: 50px 20px;
+        align-items: center; /* Ensure center alignment */
+    }
+
+    .projects .grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+        padding: 0; /* Remove padding to use full width */
+        justify-items: center; /* Center the single column */
+        width: 100%;
+        max-width: 400px; /* Limit grid width on mobile */
+    }
+
+    .card {
+        width: 100%; /* Cards take full grid width */
+        max-width: 100%; /* Remove max-width restriction on mobile */
+    }
+
+    .projects .grid {
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        background-color: rgba(29, 29, 29, 0.8);
+    }
+
+    [data-theme="light"] .card {
+        background-color: rgba(240, 240, 240, 0.8);
+    }
+
+    .controls {
+        margin-top: 2rem;
+        padding: 0;
+        width: 100%;
+        max-width: 400px; /* Match grid max-width */
+    }
+
+    .view-more-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .projects .grid .card:nth-child(n+3) {
+        display: none;
+    }
+
+    .projects .grid.show-all .card {
+        display: block;
+    }
+
+    .image-container {
+        height: 200px;
+    }
+
+    .project-links {
+        opacity: 1;
+        background: rgba(0,0,0,0.7);
+    }
+
+    .project-button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects {
+        padding: 40px 15px; /* Reduced padding on very small screens */
+    }
+
+    .projects .grid {
+        max-width: 100%; /* Use full width on very small screens */
+        gap: 1rem;
+    }
+
+    .controls {
+        margin-top: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .view-more-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        max-width: 280px;
+    }
+
+    .card {
+        background-color: rgba(29, 29, 29, 0.85);
+    }
+
+    [data-theme="light"] .card {
+        background-color: rgba(240, 240, 240, 0.85);
+    }
+
+    .content {
+        padding: 1rem; /* Reduced padding on small screens */
+    }
+
+    .content h3 {
+        font-size: 1.1rem; /* Slightly smaller heading */
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .projects {
+        padding: 30px 10px;
+    }
+
+    .projects h2 {
+        font-size: 1.8rem; /* Smaller heading on very small screens */
+        margin-bottom: 30px;
+    }
+
+    .projects .grid {
+        gap: 0.8rem;
+    }
+
+    .view-more-btn {
+        max-width: 250px;
+        padding: 8px 16px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
