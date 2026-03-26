@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 export function initializeAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -9,16 +9,5 @@ export function initializeAnimations() {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.animate-text').forEach(el => observer.observe(el));
-=======
-export function initializeAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.animate-text').forEach(el => observer.observe(el));
->>>>>>> 74b5070 (added a new project and experience)
 }
