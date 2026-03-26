@@ -1,4 +1,3 @@
-
 :root {
     --neon-green: #00ff00;
     --bg-color: #121212;
@@ -208,4 +207,3 @@ body {
 .contact-info-item {
     composes: glass-list-item;
 }
->>>>>>> 74b5070 (added a new project and experience)
