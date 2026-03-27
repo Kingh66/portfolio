@@ -219,7 +219,7 @@ export function initializeLoadingScreen() {
     }
 
     function hideFinalMessage() {
-        finalMessage.style.animation = 'messageExit 0.4s forwards'; // Faster animation
+        finalMessage.style.animation = 'messageExit 2s forwards'; // Faster animation
         
         setTimeout(() => {
             loaderContainer.style.display = 'none';
