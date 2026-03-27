@@ -215,11 +215,11 @@ export function initializeLoadingScreen() {
         
         setTimeout(() => {
             hideFinalMessage();
-        }, 1200); // BOOSTED: Reduced from 2500
+        }, 2200); // BOOSTED: Reduced from 2500
     }
 
     function hideFinalMessage() {
-        finalMessage.style.animation = 'messageExit 2s forwards'; // Faster animation
+        finalMessage.style.animation = 'messageExit 0.4s forwards'; // Faster animation
         
         setTimeout(() => {
             loaderContainer.style.display = 'none';
