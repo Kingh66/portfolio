@@ -215,7 +215,7 @@ export function initializeLoadingScreen() {
         
         setTimeout(() => {
             hideFinalMessage();
-        }, 2200); // BOOSTED: Reduced from 2500
+        }, 2500); // BOOSTED: Reduced from 2500
     }
 
     function hideFinalMessage() {
