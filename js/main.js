@@ -5,6 +5,7 @@ import { initializeForm } from './modules/formManager.js';
 import { initializeLoadingScreen } from './modules/loadingScreen.js';
 import { initializeAnimations } from './modules/animations.js';
 import { initializeProjects } from './modules/projects.js';
+import { initializeNav } from './modules/nav.js'
 
 
 // Initialize all modules except Vanta - it will initialize itself when loaded
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeLoadingScreen();
     initializeAnimations();
     initializeProjects();
+    initializeNav();
 });
 
 function animateSkillBars() {
@@ -28,3 +30,4 @@ function animateSkillBars() {
 
 // Call this when the skills section comes into view
 document.addEventListener('DOMContentLoaded', animateSkillBars);
+

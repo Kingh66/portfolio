@@ -16,59 +16,69 @@
 
     <div id="vanta-background"></div>
 
-<!-- Loading Screen -->
-    <div class="loader-container">
-    <div class="terminal-window">
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="terminal-btn close"></span>
-                <span class="terminal-btn minimize"></span>
-                <span class="terminal-btn maximize"></span>
-            </div>
-            <span class="terminal-title">system_boot.exe</span>
-        </div>
-        <div class="terminal-body">
-            <div id="loader-text" class="terminal-content"></div>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
+    <!-- Loading Screen -->
+        <div class="loader-container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn close"></span>
+                    <span class="terminal-btn minimize"></span>
+                    <span class="terminal-btn maximize"></span>
                 </div>
-                <span class="progress-text">0%</span>
+                <span class="terminal-title">system_boot.exe</span>
             </div>
-            <div id="countdown" class="countdown"></div>
+            <div class="terminal-body">
+                <div id="loader-text" class="terminal-content"></div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="progress-text">0%</span>
+                </div>
+                <div id="countdown" class="countdown"></div>
+            </div>
         </div>
+        <!-- Final message moved OUTSIDE terminal window -->
+        <div class="final-message">Let's reshape the digital frontier</div>
     </div>
-    <!-- Final message moved OUTSIDE terminal window -->
-    <div class="final-message">Let's reshape the digital frontier</div>
-</div>
 	
 	<div id="main-content" style="display: none;">
-        <header>
-            <div class="logo">&lt;/&gt;</div>
-            <nav>
-                <!-- Hamburger Menu Button -->
-                <button id="menu-toggle" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <header>
+        <div class="logo">&lt;/&gt;</div>
         
-                <!-- Navigation Links -->
-                <ul id="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                    <li>
-                        <button id="mode-toggle" aria-label="Toggle dark mode">
-                            <div class="toggle-icons">
-                                <i class="fas fa-sun"></i>
-                                <i class="fas fa-moon"></i>
-                            </div>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <!-- Navigation Pill (Centered) -->
+        <nav>
+            <!-- Hamburger Menu Button -->
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        
+            <!-- Navigation Links -->
+            <ul id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <li>
+                    <button id="mode-toggle-mobile" aria-label="Toggle dark mode">
+                        <div class="toggle-icons">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- DESKTOP BUTTON (Unique ID) -->
+        <button id="mode-toggle-desktop" aria-label="Toggle dark mode">
+            <div class="toggle-icons">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </button>
+    </header>
 
     <section class="hero" id="about">
     <div class="profile">

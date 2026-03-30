@@ -5,15 +5,15 @@
 /* ========================================= */
 header {
     display: flex;
-    justify-content: center; /* Centers the Nav Pill on Desktop */
+    justify-content: center;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 180px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: transparent; /* Transparent Header */
+    background-color: transparent;
     border-bottom: none;
     transition: all 0.3s ease;
     box-sizing: border-box;
@@ -23,11 +23,10 @@ header {
 /* LOGO - Stuck Left (Desktop) */
 /* ========================================= */
 .logo {
-    position: absolute; /* Removed from flow on Desktop */
+    position: absolute;
     left: 50px;
     top: 50%;
     transform: translateY(-50%);
-    
     font-size: 28px;
     font-weight: 700;
     color: var(--neon-green);
@@ -48,14 +47,13 @@ header {
 nav {
     display: flex;
     align-items: center;
-    /* REMOVED position: relative from here so Toggle can escape to Header */
     
-    /* Modern Glassmorphism Pill */
+    /* Glassmorphism Pill */
     background-color: rgba(30, 30, 30, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 25px; /* Balanced padding */
+    padding: 10px 25px;
     border-radius: 50px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
@@ -73,7 +71,6 @@ nav {
 #nav-menu {
     display: flex;
     gap: 5px;
-    
     align-items: center;
     list-style: none;
     margin: 0;
@@ -101,29 +98,8 @@ nav {
 }
 
 /* ========================================= */
-/* MODE TOGGLE - Positioned Outside Pill (Desktop) */
+/* TOGGLE ICONS (Shared by both buttons) */
 /* ========================================= */
-#mode-toggle {
-    position: absolute; /* Now relative to HEADER because Nav is not relative */
-    right: -350px; /* Matches Logo left position */
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--neon-green);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#mode-toggle:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
 .toggle-icons {
     position: relative;
     width: 24px;
@@ -141,19 +117,99 @@ nav {
 }
 
 /* Sun Icon (Default Dark Mode) */
-.fa-sun { color: #ffd700; opacity: 1; transform: rotate(0deg); }
+.toggle-icons .fa-sun { 
+    color: #ffd700; 
+    opacity: 1; 
+    transform: rotate(0deg); 
+}
+
 /* Moon Icon (Hidden in Dark Mode) */
-.fa-moon { color: #888; opacity: 0; transform: rotate(-90deg); }
+.toggle-icons .fa-moon { 
+    color: #888; 
+    opacity: 0; 
+    transform: rotate(-90deg); 
+}
 
 /* Light Mode Active */
-[data-theme="light"] .fa-sun { opacity: 0; transform: rotate(90deg); }
-[data-theme="light"] .fa-moon { opacity: 1; transform: rotate(0deg); }
+[data-theme="light"] .toggle-icons .fa-sun { 
+    opacity: 0; 
+    transform: rotate(90deg); 
+}
+
+[data-theme="light"] .toggle-icons .fa-moon { 
+    opacity: 1; 
+    color: #6c5ce7;
+    transform: rotate(0deg); 
+}
+
+/* ========================================= */
+/* DESKTOP MODE TOGGLE - Same as Nav Pill */
+/* ========================================= */
+#mode-toggle-desktop {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    color: var(--neon-green);
+    
+    /* SAME GLASS BACKGROUND AS NAV PILL */
+    background-color: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+[data-theme="light"] #mode-toggle-desktop {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+#mode-toggle-desktop:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px var(--neon-green);
+}
+
+[data-theme="light"] #mode-toggle-desktop:hover {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px var(--neon-green);
+}
+
+/* ========================================= */
+/* MOBILE MODE TOGGLE - Inside Nav Menu */
+/* ========================================= */
+#mode-toggle-mobile {
+    /* Hidden on Desktop (JS handles display) */
+    display: none;
+    
+    background: transparent;
+    border: none;
+    color: var(--neon-green);
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 
 /* ========================================= */
 /* MOBILE MENU TOGGLE (Hamburger) */
 /* ========================================= */
 #menu-toggle {
-    display: none; /* Hidden on Desktop */
+    display: none;
     background: transparent;
     border: none;
     color: var(--neon-green);
@@ -163,66 +219,83 @@ nav {
     z-index: 1002;
 }
 
+#menu-toggle i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 /* ========================================= */
 /* MOBILE RESPONSIVE STYLES */
 /* ========================================= */
 @media (max-width: 768px) {
     header {
-        /* Use space-between to push Logo Left and Nav Right */
-        justify-content: space-between; 
+        justify-content: space-between;
         padding: 20px 25px;
         background-color: transparent;
         align-items: center;
     }
 
-    /* LOGO - Reset to normal flow for proper alignment */
     .logo {
-        position: relative; /* Back to flow */
+        position: relative;
         left: auto;
         top: auto;
         transform: none;
         font-size: 24px;
-        /* Order not strictly needed if it's first in HTML, but good practice */
-        order: 1; 
+        order: 1;
     }
 
-    /* NAV - Reset Pill styles, acts as Hamburger Container */
     nav {
         background: transparent;
         backdrop-filter: none;
         padding: 0;
         border: none;
         box-shadow: none;
-        order: 2; /* Force Right */
+        order: 2;
         margin: 0;
     }
 
-    /* SHOW HAMBURGER */
+    /* Show Hamburger */
     #menu-toggle {
         display: block;
     }
 
-    /* MODE TOGGLE - Reset for Mobile (Inside menu) */
-    #mode-toggle {
-        position: relative; /* Reset absolute */
-        right: auto;
-        top: auto;
-        transform: none;
-        margin: 15px auto 5px auto;
-        width: 100%;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
+    /* Hide Desktop Toggle */
+    #mode-toggle-desktop {
+        display: none !important;
     }
 
-    /* MOBILE DROPDOWN MENU */
+    /* Show Mobile Toggle (inside menu) */
+    #mode-toggle-mobile {
+        display: flex !important;
+        
+        /* SAME GLASS STYLE AS NAV MENU */
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        margin-top: 10px;
+        padding: 12px;
+    }
+
+    [data-theme="light"] #mode-toggle-mobile {
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    #mode-toggle-mobile:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] #mode-toggle-mobile:hover {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+    /* Mobile Dropdown Menu */
     #nav-menu {
-        display: none; /* Hidden by default */
+        display: none;
         position: absolute;
-        top: 100%; /* Directly below header */
+        top: 100%;
         left: 15px;
         right: 15px;
-        width: auto; 
+        width: auto;
         
         background-color: rgba(20, 20, 20, 0.95);
         backdrop-filter: blur(15px);
@@ -237,14 +310,12 @@ nav {
         z-index: 999;
     }
 
-    /* Light Mode Mobile Menu */
     [data-theme="light"] #nav-menu {
         background-color: rgba(255, 255, 255, 0.98);
         border: 1px solid rgba(0, 0, 0, 0.05);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    /* Active State */
     #nav-menu.active {
         display: flex;
     }
