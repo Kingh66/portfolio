@@ -223,12 +223,6 @@ nav {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.cv-btn {
-    text-decoration: none;
-    cursor: pointer;
-   
-}
-
 /* ========================================= */
 /* MOBILE RESPONSIVE STYLES */
 /* ========================================= */
